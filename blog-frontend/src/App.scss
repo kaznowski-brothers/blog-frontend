@@ -1,0 +1,26 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.App {
+  text-align: center;
+}
+
+.header {
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+  @extend .bg-primary;
+}
+
+.article-container {
+  display: inline-flex;
+}
+
+.article-tile {
+  border: solid red;
+  border-width: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+.article-content {
+  @extend .bg-dark;
+}
