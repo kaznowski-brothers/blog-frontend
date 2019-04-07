@@ -3,16 +3,25 @@ import './ArticleContainer.scss';
 import ArticleTile from './ArticleTile'
 
 class ArticleContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.articles = [... Array(100).keys()].map(function (item) {
+            return { "title": "Article " + item };
+        })
+    }
+
     render() {
+        var renderedArticles = this.articles.map(function (item) {
+            return (
+                <ArticleTile title={item.title} />
+            )
+        });
+
         return (
-        <div className="article-container">
-
-          <ArticleTile title="Article 1"/>
-          <ArticleTile title="Article 2"/>
-          <ArticleTile title="Article 3"/>
-          <ArticleTile title="Article 4"/>
-
-        </div>
+            <div className="article-container">
+                {renderedArticles}
+            </div>
         )
     }
 }
