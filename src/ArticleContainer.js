@@ -6,7 +6,7 @@ class ArticleContainer extends Component {
 
     constructor(props) {
         super(props)
-        this.articles = [... Array(100).keys()].map(function (item) {
+        this.articles = [...Array(100).keys()].map(function (item) {
             return { "title": "Article " + item };
         })
     }
