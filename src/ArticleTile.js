@@ -3,15 +3,34 @@ import './ArticleTile.scss';
 
 class ArticleTile extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            clicked: false
+        }
+    }
+
+    click() {
+        this.setState({
+            clicked: true
+        });
+    }
+
     render() {
-        return (
-            <div className="article-tile">
-                <h3>{this.props.title}</h3>
+        var articleContent = ``;
+        if (this.state.clicked) {
+            articleContent = (
                 <div className="article-content">
                     <h2>{this.props.title}</h2>
                     <p>This is some content</p>
                     <p>This is more content</p>
                 </div>
+            )
+        }
+        return (
+            <div className="article-tile" onClick={() => {this.click()}}>
+                <h3>{this.props.title}</h3>
+                {articleContent}
             </div>
         )
     }
